@@ -222,7 +222,7 @@ public class LineRendererJFX extends Application {
 		final Label sliderValueLabel = new Label(String.valueOf(initialValue)); // show value
 		final Slider slider = new Slider(minValue, maxValue, initialValue); // slider control
 
-		slider.setBlockIncrement(1);
+		// slider.setBlockIncrement(1);
 		slider.showTickLabelsProperty().set(true);
 		slider.showTickMarksProperty().set(true);
 		slider.setMaxWidth(Double.POSITIVE_INFINITY);

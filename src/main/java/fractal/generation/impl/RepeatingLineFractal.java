@@ -6,12 +6,8 @@ import fractal.generation.LineFractal;
 import fractal.generation.impl.shapes.UnitShapes;
 import lombok.Data;
 
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Data
 public class RepeatingLineFractal extends LineFractal {
@@ -34,7 +30,8 @@ public class RepeatingLineFractal extends LineFractal {
 //				? UnitShapes.getShapeV()
 //				:
 //				UnitShapes.getShapeTopHexagon();
-				UnitShapes.getShapeVEdgedControlled(getRatio()/2, getThetaDegrees()/360);
+				UnitShapes.getShapePentaControlled(getRatio()/2, getThetaDegrees()/360);
+
 
 		if (getIteration() == 0) {
 			List<Line> initialSideLines = UnitShapes.getShape(initialSides);
@@ -43,13 +40,14 @@ public class RepeatingLineFractal extends LineFractal {
 			}
 			newLines.addAll(initialSideLines);
 		} else {
-			previous.forEach(line -> {
+			previous.forEach(pline -> {
+				Line line = (pline.isUp() ? pline : pline.reverse());
 				double angleRad = Maths.getOrientationRadians(line);
 				double len = Maths.getLength(line.getA(), line.getB());
 				Maths.scaleAndRotate(unitShape, len / Maths.getLength(unitShape), angleRad).forEach(line1 -> {
-					Line l = Maths.shift(line1, line.getA().getX(), line.getA().getY());
-					l.setHandedness(line.getHandedness() + angleRad);
-					newLines.add(l);
+					Line shifted = Maths.shift(line1, line.getA().getX(), line.getA().getY());
+					shifted.setHandedness(line.getHandedness() + angleRad);
+					newLines.add(shifted);
 				});
 			});
 		}

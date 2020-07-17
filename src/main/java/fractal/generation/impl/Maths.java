@@ -31,24 +31,20 @@ public class Maths {
     }
 
     public static Line shift(Line line, double x, double y) {
-        return new Line(
-                new Point2D.Double(line.getA().getX() + x, line.getA().getY() + y),
-                new Point2D.Double(line.getB().getX() + x, line.getB().getY() + y),
-                line.getN()
-        ) {{
-            setHandedness(line.getHandedness());
-        }};
+        Line nl = line.clone();
+        nl.setA(new Point2D.Double(line.getA().getX() + x, line.getA().getY() + y));
+        nl.setB(new Point2D.Double(line.getB().getX() + x, line.getB().getY() + y));
+        return nl;
     }
 
     public static List<Line> scaleAndRotate(List<Line> lines, double scale, double theta) {
         Point2D origin = lines.get(0).getA();
-        return lines.stream().map(line -> new Line(
-                rotateAndScalePointAbout(line.getA(), origin, scale, theta),
-                rotateAndScalePointAbout(line.getB(), origin, scale, theta),
-                line.getN()) {{
-                    setHandedness(line.getHandedness());
-                }}
-        ).collect(Collectors.toList());
+        return lines.stream().map(line -> {
+            Line nl = line.clone();
+            nl.setA(rotateAndScalePointAbout(line.getA(), origin, scale, theta));
+            nl.setB(rotateAndScalePointAbout(line.getB(), origin, scale, theta));
+            return nl;
+        }).collect(Collectors.toList());
     }
 
     public static Point2D rotateAndScalePointAbout(Point2D p, Point2D origin, double scale, double theta) {

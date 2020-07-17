@@ -47,10 +47,9 @@ public class UnitShapes {
         double x1 = 0.5 - (width/2);
         double x2 = 0.5 + (width/2);
         return Arrays.asList(
-                new Line(0, 0, x1, 0),
-                new Line(x1, 0, 0.5, height),
-                new Line(0.5, height, x2, 0),
-                new Line(x2, 0, 1, 0)
+                new Line(0, 0, x1, height).down(),
+                new Line(x1, height, x2, height),
+                new Line(x2, height, 1, 0).down()
         );
     }
 

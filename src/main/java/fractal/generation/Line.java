@@ -11,6 +11,7 @@ public class Line {
 	private Point2D b;
 	private int n;
 	private double handedness;
+	private boolean up = true;
 
 	public Line(Point2D a, Point2D b) {
 		this(a, b, 0);
@@ -22,6 +23,13 @@ public class Line {
 		this.n = n;
 	}
 
+	public Line clone() {
+		Line reverse = new Line(a, b, n);
+		reverse.setHandedness(handedness);
+		reverse.setUp(up);
+		return reverse;
+	}
+
 	public Line(double x1, double y1, double x2, double y2, int n) {
 		this.a = new Point2D.Double(x1, y1);
 		this.b = new Point2D.Double(x2, y2);
@@ -30,6 +38,18 @@ public class Line {
 
 	public Line(double x1, double y1, double x2, double y2) {
 		this(x1, y1, x2, y2, 0);
+	}
+
+	public Line reverse() {
+		Line reverse = clone();
+		reverse.setA(b);
+		reverse.setB(a);
+		return reverse;
+	}
+
+	public Line down() {
+		setUp(false);
+		return this;
 	}
 
 	public Point2D midpoint() {
