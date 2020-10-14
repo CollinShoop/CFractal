@@ -59,7 +59,7 @@ public class LineRendererJFX extends Application {
 		canvasBox.getChildren().add(canvas);
 
 		VBox controlBox = new VBox();
-		controlBox.getChildren().add(new VBox(buildThetaControl(), buildRatioControl(), buildInitialSidesControl(), buildInvertControl()));
+		controlBox.getChildren().add(new VBox(buildThetaControl(), buildRatioControl(), buildInitialSidesControl()));
 		controlBox.getChildren().add(buildToggleControl());
 
 		root.getChildren().add(canvasBox);
@@ -133,13 +133,6 @@ public class LineRendererJFX extends Application {
 
 		fractalGen.regen();
 		repaint();
-	}
-
-	private Pane buildInvertControl() {
-		return buildSlidingControl("Invert", 0, 100, renderingProps.getInvertRatio()*100, val -> {
-			renderingProps.setInvertRatio(val /100.0);
-			repaint();
-		});
 	}
 
 	private Pane buildThetaControl() {
