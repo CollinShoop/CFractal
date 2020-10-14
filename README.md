@@ -19,4 +19,10 @@ TODO
 
 There's more than a single way to construct some fractals. For example, the [Sierpinski Triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle). 
 
-![Low-depth](img/sierpinski-shallow.png)
+This version has the benefit of being constructed from a single, flowing, series of connected lines. 
+
+![](img/sierpinski-shallow.png)
+
+Increasing the depth a few levels yields a sharp and colored in result. 
+
+![](img/sierpinski-deep.png)
