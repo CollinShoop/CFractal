@@ -39,7 +39,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.cshoop.fractal.rendering.jfx.mainJFX</mainClass>
+                            <mainClass>com.cshoop.fractal.rendering.jfx.LineRendererJFX</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
