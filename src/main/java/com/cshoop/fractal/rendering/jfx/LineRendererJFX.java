@@ -1,9 +1,9 @@
-package fractal.rendering.jfx;
+package com.cshoop.fractal.rendering.jfx;
 
-import fractal.generation.Line;
-import fractal.generation.impl.RepeatingLineFractal;
-import fractal.util.ColorMapper;
-import fractal.util.ColorUtil;
+import com.cshoop.fractal.util.ColorUtil;
+import com.cshoop.fractal.generation.Line;
+import com.cshoop.fractal.generation.impl.RepeatingLineFractal;
+import com.cshoop.fractal.util.ColorMapper;
 import javafx.application.Application;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;

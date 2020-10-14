@@ -1,6 +1,4 @@
-package fractal.rendering.jfx;
-
-import fractal.rendering.swing.LineRenderer;
+package com.cshoop.fractal.rendering.jfx;
 
 public class mainJFX {
 	

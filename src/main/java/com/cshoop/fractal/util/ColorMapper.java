@@ -1,4 +1,4 @@
-package fractal.util;
+package com.cshoop.fractal.util;
 
 import java.awt.Color;
 import java.util.Arrays;

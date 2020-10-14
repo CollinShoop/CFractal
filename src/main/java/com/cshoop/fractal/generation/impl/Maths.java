@@ -1,6 +1,6 @@
-package fractal.generation.impl;
+package com.cshoop.fractal.generation.impl;
 
-import fractal.generation.Line;
+import com.cshoop.fractal.generation.Line;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;

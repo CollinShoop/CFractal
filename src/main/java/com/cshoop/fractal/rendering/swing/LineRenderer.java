@@ -1,9 +1,9 @@
-package fractal.rendering.swing;
+package com.cshoop.fractal.rendering.swing;
 
-import fractal.generation.Line;
-import fractal.generation.LineFractal;
-import fractal.generation.impl.RepeatingLineFractal;
-import fractal.util.ColorMapper;
+import com.cshoop.fractal.generation.Line;
+import com.cshoop.fractal.generation.LineFractal;
+import com.cshoop.fractal.generation.impl.RepeatingLineFractal;
+import com.cshoop.fractal.util.ColorMapper;
 
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;

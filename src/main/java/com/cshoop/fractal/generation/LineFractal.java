@@ -1,4 +1,4 @@
-package fractal.generation;
+package com.cshoop.fractal.generation;
 
 
 import java.awt.geom.Point2D;

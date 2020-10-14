@@ -1,6 +1,4 @@
-package fractal.rendering.swing;
-
-import fractal.rendering.swing.LineRenderer;
+package com.cshoop.fractal.rendering.swing;
 
 public class main {
 	
