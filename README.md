@@ -11,7 +11,10 @@ java -jar target/cfractal-1.0-SNAPSHOT.jar
 
 ## Controls
 
-TODO
+- Drag the mouse to move around
+- Mouse scroll wheel to zoom in/out
+- `+` to increase iteration depth
+- `-` to decrease iteration depth
 
 ## Examples
 
