@@ -51,7 +51,7 @@ public class LineRendererJFX extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		primaryStage.setTitle("Drawing Operations Test");
+		primaryStage.setTitle("CFractal - JFX");
 
 		HBox root = new HBox();
 
